@@ -41,4 +41,5 @@ script:
    # - chmod +x ./gradlew
    # - ./gradlew assembleDebug assembleRelease
     - cd ../code-checker/phpcheckstyle
+    - composer install
     - ./phpcheckstyle-travelmate.sh
