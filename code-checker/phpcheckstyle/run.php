@@ -140,7 +140,7 @@ for ($i = 1; $i < $_SERVER["argc"]; $i ++) {
 
 define("PHPCHECKSTYLE_HOME_DIR", dirname(__FILE__));
 // require_once PHPCHECKSTYLE_HOME_DIR."/src/PHPCheckstyle.php";
-require_once "vendor/autoload.php";
+require_once "./vendor/autoload.php";
 
 // check for valid format and set the output file name
 // right now the output file name is not configurable, only
