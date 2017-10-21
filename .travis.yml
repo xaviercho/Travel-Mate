@@ -1,14 +1,12 @@
 language: android
 # jdk: oraclejdk8
-android:
-  components:
-    - platform-tools
-    - tools
-    - build-tools-25.0.1
-    - android-24
-php:
-    - "5.4"
-    - "5.5"
+# android:
+#   components:
+#     - platform-tools
+#     - tools
+#     - build-tools-25.0.1
+#     - android-24
+
 # # Support library
 #     - extra-android-support
 #     - extra-android-m2repository
@@ -32,6 +30,7 @@ before_script:
     # - cd ..
     - chmod +x code-checker/phpcheckstyle/phpcheckstyle-travelmate-installPHP.sh
     - ./code-checker/phpcheckstyle/phpcheckstyle-travelmate-installPHP.sh
+    - sudo apt-get install php5-cli
     - chmod +x code-checker/phpcheckstyle/phpcheckstyle-travelmate.sh
     - cd Android
     - chmod +x gradlew
