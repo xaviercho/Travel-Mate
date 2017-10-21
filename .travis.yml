@@ -27,6 +27,7 @@ before_script:
     # # - sudo apt-get install apache2
     # # - /
     # - cd ..
+    - chmod +x code-checker/phpcheckstyle/phpcheckstyle-travelmate-installPHP.sh
     - ./code-checker/phpcheckstyle/phpcheckstyle-travelmate-installPHP.sh
     - chmod +x code-checker/phpcheckstyle/phpcheckstyle-travelmate.sh
     - cd Android
