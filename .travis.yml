@@ -15,24 +15,27 @@ language: android
 #     - '.+'
 
 before_script:
-    - sudo apt-get install build-essential libxml2-dev
-    - wget http://in1.php.net/distributions/php-5.3.29.tar.bz2
-    - tar -xvf php-5.3.29.tar.bz2
-    - cd php-5.3.29
-    - ./configure
-    - make
-    - make test
-    - sudo make install
-    # - sudo apt-get update
-    # - sudo apt-get install apache2
-    # - /
-    - cd ..
+    # - sudo apt-get install build-essential libxml2-dev
+    # - wget http://in1.php.net/distributions/php-5.3.29.tar.bz2
+    # - tar -xvf php-5.3.29.tar.bz2
+    # - cd php-5.3.29
+    # - ./configure
+    # - make
+    # - make test
+    # - sudo make install
+    # # - sudo apt-get update
+    # # - sudo apt-get install apache2
+    # # - /
+    # - cd ..
+    - ./code-checker/phpcheckstyle/phpcheckstyle-travelmate-installPHP.sh
     - chmod +x code-checker/phpcheckstyle/phpcheckstyle-travelmate.sh
     - cd Android
     - chmod +x gradlew
 
 script:
+    - curl -s http://localhost/ && sudo cat /var/log/apache2/error.log && curl -s http://localhost/ | grep -F "hello world! $TRAVIS_PHP_VERSION" && curl -s http://localhost/non_existing_url_is_redirected | grep -F "hello world! $TRAVIS_PHP_VERSION" && curl -s http://mydomain.local/ | grep -F "hello world! $TRAVIS_PHP_VERSION"
+
    # - chmod +x ./gradlew
    # - ./gradlew assembleDebug assembleRelease
-   - cd ../code-checker/phpcheckstyle
-   - ./phpcheckstyle-travelmate.sh
+    - cd ../code-checker/phpcheckstyle
+    - ./phpcheckstyle-travelmate.sh
